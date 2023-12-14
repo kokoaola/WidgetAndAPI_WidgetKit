@@ -11,6 +11,7 @@ import Foundation
 ///
 struct WeatherService{
     func getWeather() async throws -> [Weather]{
+        //緯度40.71302914226243、経度-74.00606120853008は、アメリカ合衆国ニューヨーク州ニューヨーク市
         let urlString = "https://api.lil.software/weather?latitude=40.71302914226243&longitude=-74.00606120853008"
         // urlStringからURLを作成、urlStringが無効な場合はクラッシュ
         guard let url = URL(string: urlString)else{
@@ -48,4 +49,97 @@ struct WeatherService{
  403 Forbidden：サーバーがリクエストを理解したが、それを実行する権限がない
  404 Not Found：リクエストされたリソースが見つかりませんでした
  500 Internal Server Error：サーバー内部でエラーが発生した
+ */
+
+/*
+ 得られるAPI
+ 
+ {
+ "forecast":[
+ {
+ "name":"Today",
+ "temperature":43,
+ "unit":"F",
+ "description":"Sunny"
+ },
+ {
+ "name":"Tonight",
+ "temperature":35,
+ "unit":"F",
+ "description":"Mostly Clear"
+ },
+ {
+ "name":"Friday",
+ "temperature":54,
+ "unit":"F",
+ "description":"Sunny"
+ },
+ {
+ "name":"Friday Night",
+ "temperature":39,
+ "unit":"F",
+ "description":"Mostly Clear"
+ },
+ {
+ "name":"Saturday",
+ "temperature":53,
+ "unit":"F",
+ "description":"Sunny"
+ },
+ {
+ "name":"Saturday Night",
+ "temperature":42,
+ "unit":"F",
+ "description":"Mostly Cloudy"
+ },
+ {
+ "name":"Sunday",
+ "temperature":54,
+ "unit":"F",
+ "description":"Cloudy then Chance Light Rain"
+ },
+ {
+ "name":"Sunday Night",
+ "temperature":52,
+ "unit":"F",
+ "description":"Heavy Rain Likely"
+ },
+ {
+ "name":"Monday",
+ "temperature":54,
+ "unit":"F",
+ "description":"Heavy Rain Likely"
+ },
+ {
+ "name":"Monday Night",
+ "temperature":37,
+ "unit":"F",
+ "description":"Chance Light Rain then Chance Rain Showers"
+ },
+ {
+ "name":"Tuesday",
+ "temperature":43,
+ "unit":"F",
+ "description":"Chance Rain Showers"
+ },
+ {
+ "name":"Tuesday Night",
+ "temperature":32,
+ "unit":"F",
+ "description":"Slight Chance Snow Showers"
+ },
+ {
+ "name":"Wednesday",
+ "temperature":42,
+ "unit":"F",
+ "description":"Slight Chance Snow Showers"
+ },
+ {
+ "name":"Wednesday Night",
+ "temperature":32,
+ "unit":"F",
+ "description":"Partly Cloudy"
+ }
+ ]
+ }
  */
